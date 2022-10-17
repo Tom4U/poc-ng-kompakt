@@ -4,7 +4,11 @@
   "description": "Ein simple Vereinsseite",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "predeploy": "rimraf dist",
+    "deploy": "copyfiles --flat src/**/*.html src/**/*.css dist",
+    "preserve": "npm run deploy",
+    "serve": "concurrently \"tsc -w\" \"lite-server -c bs-config.json\""
   },
   "repository": {
     "type": "git",
@@ -17,7 +21,10 @@
   },
   "homepage": "https://github.com/Tom4U/uebung-ng-kompakt#readme",
   "devDependencies": {
+    "concurrently": "^7.4.0",
+    "copyfiles": "^2.4.1",
     "lite-server": "^2.6.1",
+    "rimraf": "^3.0.2",
     "typescript": "^4.8.4"
   }
 }

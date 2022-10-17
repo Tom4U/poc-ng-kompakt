@@ -11,7 +11,7 @@ User Stories:
     ☐ Termine können als Meetings mit Benutzern eingetragen werden
 
 Aufgaben:
-    ☐ @doing Projekt aufsetzen mit
+    ✔ Projekt aufsetzen mit @done(22-10-17 15:10)
         ✔ NPM @done(22-10-17 15:04)
         ✔ TypeScript @done(22-10-17 15:06)
         ✔ Entwicklungsserver @done(22-10-17 15:09)
