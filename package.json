@@ -1,0 +1,19 @@
+{
+  "name": "uebung-ng-kompakt",
+  "version": "1.0.0",
+  "description": "Erste Übungen im Seminar",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tom4U/uebung-ng-kompakt.git"
+  },
+  "author": "Tom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tom4U/uebung-ng-kompakt/issues"
+  },
+  "homepage": "https://github.com/Tom4U/uebung-ng-kompakt#readme"
+}
