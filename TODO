@@ -1,0 +1,18 @@
+Grunddaten:
+    Titel: Mein Verein
+    Name: club-app
+
+User Stories:
+    ☐ Die App hat ein einheitliches Aussehen
+    ☐ Es gibt einen öffentlichen Bereich
+    ☐ Es gibt einen internen Bereich
+    ☐ Die App besitzt einen Kalender
+    ☐ Dem Kalender können Termine hinzugefügt werden
+    ☐ Termine können als Meetings mit Benutzern eingetragen werden
+
+Aufgaben:
+    ☐ @doing Projekt aufsetzen mit
+        ☐ NPM
+        ☐ TypeScript
+        ☐ Entwicklungsserver
+    ☐ @doing Basis Layout erstellen (App Rahmen)
