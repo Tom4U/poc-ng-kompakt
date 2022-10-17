@@ -7,6 +7,7 @@
     "build": "tsc",
     "predeploy": "rimraf dist",
     "deploy": "copyfiles --flat src/**/*.html src/**/*.css dist",
+    "postdeploy": "npm run build",
     "preserve": "npm run deploy",
     "serve": "concurrently \"tsc -w\" \"lite-server -c bs-config.json\""
   },

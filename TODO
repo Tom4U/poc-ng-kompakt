@@ -3,7 +3,7 @@ Grunddaten:
     Name: club-app
 
 User Stories:
-    ☐ Die App hat ein einheitliches Aussehen
+    ✔ Die App hat ein einheitliches Aussehen @done(22-10-17 16:01)
     ☐ Es gibt einen öffentlichen Bereich
     ☐ Es gibt einen internen Bereich
     ☐ Die App besitzt einen Kalender
@@ -15,4 +15,4 @@ Aufgaben:
         ✔ NPM @done(22-10-17 15:04)
         ✔ TypeScript @done(22-10-17 15:06)
         ✔ Entwicklungsserver @done(22-10-17 15:09)
-    ☐ @doing Basis Layout erstellen (App Rahmen)
+    ✔ Basis Layout erstellen (App Rahmen) @done(22-10-17 15:55)
