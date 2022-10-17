@@ -1,0 +1,19 @@
+{
+  "name": "club-app",
+  "version": "1.0.0",
+  "description": "Ein simple Vereinsseite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tom4U/uebung-ng-kompakt.git"
+  },
+  "author": "Das Angular Training Team ;)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tom4U/uebung-ng-kompakt/issues"
+  },
+  "homepage": "https://github.com/Tom4U/uebung-ng-kompakt#readme"
+}
