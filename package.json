@@ -4,7 +4,9 @@
   "description": "Erste Übungen im Seminar",
   "main": "main.js",
   "scripts": {
-    "serve": "lite-server"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "serve": "concurrently \"tsc -w\" \"lite-server\""
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/Tom4U/uebung-ng-kompakt#readme",
   "devDependencies": {
+    "concurrently": "^7.4.0",
     "lite-server": "^2.6.1",
     "typescript": "^4.8.4"
   }
