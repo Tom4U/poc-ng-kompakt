@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Tom4U/uebung-ng-kompakt/issues"
   },
-  "homepage": "https://github.com/Tom4U/uebung-ng-kompakt#readme"
+  "homepage": "https://github.com/Tom4U/uebung-ng-kompakt#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }
