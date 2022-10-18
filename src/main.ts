@@ -1,19 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-    loadYear();
-    loadTitle();
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-    const date = new Date();
-    console.log(`${date.getHours()}:${date.getMinutes()} Anwendung wurde gestartet`);
-})
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-function loadYear(): void {
-    const year = new Date().getFullYear();
-    
-    document.body.innerHTML = document.body.innerHTML.replace('{{year}}', year.toString());
+if (environment.production) {
+  enableProdMode();
 }
 
-function loadTitle(): void {
-    const title = 'Mein Verein';
-
-    document.body.innerHTML = document.body.innerHTML.replace('{{title}}', title);
-}
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
