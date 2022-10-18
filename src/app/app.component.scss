@@ -1,12 +1,15 @@
 $default-padding: 10px;
+$primary-color: rgb(58, 45, 2);
+$primary-contrast-color: limegreen;
+$accent-color: rgb(203, 141, 17);
+$accent-contrast-color: #000;
 
 @mixin headerFooterLayout {
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 64px;
-    background: rgb(58, 45, 2);
-    color: limegreen;
+    background: $primary-color;
+    color: $primary-contrast-color;
 }
 
 .app {
@@ -17,12 +20,30 @@ $default-padding: 10px;
     overflow: hidden;
     
     .header {
-        display: flex;
+        justify-content: space-between;
         padding: $default-padding;
         @include headerFooterLayout();
         
         .title {
             font-weight: normal;
+        }
+
+        .actions {
+            margin: 0;
+
+            .action {
+                cursor: pointer;
+                border: none;
+                background-color: $accent-color;
+                color: $accent-contrast-color;
+                border-radius: 4px;
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+        
+                &:hover {
+                    background-color: lighten($color: $accent-color, $amount: 3);
+                }
+            }
         }
     }
     

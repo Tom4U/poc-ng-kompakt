@@ -9,6 +9,7 @@ import { DateHelper } from "src/shared/code-helpers/date-helper";
 export class AppComponent {
   title = "Mein Verein";
   year = new Date().getFullYear();
+  authenticated = !false;
 
   constructor() {
     console.log(

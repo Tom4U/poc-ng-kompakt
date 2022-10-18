@@ -1,6 +1,10 @@
 <div class="app">
     <header class="header">
         <h1 class="title">{{title}}</h1>
+        <p class="actions">
+            <button type="button" class="action" *ngIf="!authenticated">Anmelden</button>
+            <button type="button" class="action" *ngIf="authenticated">Abmelden</button>
+        </p>
     </header>
     <main class="content">
         <p>Willkommen!</p>
