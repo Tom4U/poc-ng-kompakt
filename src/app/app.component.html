@@ -1,6 +1,13 @@
 <div class="container">
     <header class="header container-padding">
         <h1 class="title">{{title}}</h1>
+        <div class="header-actions">
+            <ng-container *ngFor="let headerAction of headerActions" >
+                <button 
+                *ngIf="headerAction.showAction()" class="header-action"
+                type="button">{{headerAction.name}}</button>
+            </ng-container>
+        </div>
     </header>
     <main class="content container-padding">
         <div class="greeter">
