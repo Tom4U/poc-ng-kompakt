@@ -1,0 +1,23 @@
+{
+  "name": "ts-decorators",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tom4U/uebung-ng-kompakt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tom4U/uebung-ng-kompakt/issues"
+  },
+  "homepage": "https://github.com/Tom4U/uebung-ng-kompakt#readme",
+  "devDependencies": {
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4"
+  }
+}
