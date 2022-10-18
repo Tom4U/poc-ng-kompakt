@@ -17,3 +17,7 @@ Aufgaben:
         ✔ Entwicklungsserver @done(22-10-17 15:09)
     ✔ Basis Layout erstellen (App Rahmen) @done(22-10-17 15:55)
     ✔ Minimalen Angular Workspace anlegen @done(22-10-18 11:09)
+    ☐ Login Button implementieren
+        ☐ Layout umsetzen im Header
+        ☐ Zeigt "Anmelden", wenn nicht angemeldet
+        ☐ Zeigt "Abmelden", wenn angemeldet
