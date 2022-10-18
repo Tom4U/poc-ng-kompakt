@@ -1,9 +1,12 @@
-import { HtmlHelper } from "./html-helper.js";
-import { Greeter } from "./greeter.js";
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-const htmlHelper = new HtmlHelper('#greet-action', '#name', '.output > #greeting');
-const greeter = new Greeter(htmlHelper);
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-document.addEventListener('DOMContentLoaded', () => {
-    htmlHelper.getGreetActionElement()?.addEventListener('click', () => greeter.greet());
-});
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));

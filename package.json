@@ -1,26 +1,30 @@
 {
-  "name": "uebung-ng-kompakt",
-  "version": "1.0.0",
-  "description": "Erste Übungen im Seminar",
-  "main": "main.js",
+  "name": "my-demo",
+  "version": "0.0.0",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "serve": "concurrently \"tsc -w\" \"lite-server\""
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tom4U/uebung-ng-kompakt.git"
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^14.2.0",
+    "@angular/common": "^14.2.0",
+    "@angular/compiler": "^14.2.0",
+    "@angular/core": "^14.2.0",
+    "@angular/forms": "^14.2.0",
+    "@angular/platform-browser": "^14.2.0",
+    "@angular/platform-browser-dynamic": "^14.2.0",
+    "@angular/router": "^14.2.0",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
   },
-  "author": "Tom",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Tom4U/uebung-ng-kompakt/issues"
-  },
-  "homepage": "https://github.com/Tom4U/uebung-ng-kompakt#readme",
   "devDependencies": {
-    "concurrently": "^7.4.0",
-    "lite-server": "^2.6.1",
-    "typescript": "^4.8.4"
+    "@angular-devkit/build-angular": "^14.2.6",
+    "@angular/cli": "~14.2.6",
+    "@angular/compiler-cli": "^14.2.0",
+    "typescript": "~4.7.2"
   }
 }
