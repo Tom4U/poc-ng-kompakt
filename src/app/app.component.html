@@ -2,8 +2,9 @@
     <header class="header">
         <h1 class="title">{{title}}</h1>
         <p class="actions">
-            <button type="button" class="action" *ngIf="!authenticated">Anmelden</button>
-            <button type="button" class="action" *ngIf="authenticated">Abmelden</button>
+            <ng-container *ngFor="let action of headerActions">
+                <button type="button" class="action" *ngIf="action.showAction()">{{action.name}}</button>
+            </ng-container>
         </p>
     </header>
     <main class="content">
