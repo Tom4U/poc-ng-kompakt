@@ -1,0 +1,11 @@
+<div class="layout">
+    <header>
+        <app-layout-header class="header" [title]="title" [commands]="commands"></app-layout-header>
+    </header>
+    <main class="content">
+        <ng-content></ng-content>
+    </main>
+    <footer>
+        <app-layout-footer class="footer" [copyright]="copyright"></app-layout-footer>
+    </footer>
+</div>

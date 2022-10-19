@@ -1,0 +1,6 @@
+<h1 class="title">{{title}}</h1>
+<div class="commands">
+    <ng-container *ngFor="let command of commands">
+        <app-command [command]="command" *ngIf="command.active()"></app-command>
+    </ng-container>
+</div>

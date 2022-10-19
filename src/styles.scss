@@ -4,3 +4,11 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+:root {
+    --default-padding: 10px;
+    --primary-color: rgb(58, 45, 2);
+    --primary-contrast-color: limegreen;
+    --accent-color: rgb(203, 141, 17);
+    --accent-contrast-color: #000;
+}

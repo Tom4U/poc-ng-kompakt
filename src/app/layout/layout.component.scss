@@ -1,0 +1,34 @@
+@mixin headerFooterLayout {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    background: var(--primary-color);
+    color: var(--primary-contrast-color);
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    .header {
+        justify-content: space-between;
+        padding:var(--default-padding);
+        @include headerFooterLayout();
+    }
+
+    .content {
+        flex: 2;
+        display: flex;
+        overflow: auto;
+        padding: var(--default-padding);
+    }
+
+    .footer {
+        justify-content: center;
+        @include headerFooterLayout();
+        padding: var(--default-padding);
+    }
+}

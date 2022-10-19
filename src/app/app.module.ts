@@ -2,10 +2,20 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { CommandComponent } from './shared/ui/command/command.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LayoutComponent } from './layout/layout.component';
+import { LayoutHeaderComponent } from './layout/layout-header/layout-header.component';
+import { LayoutFooterComponent } from './layout/layout-footer/layout-footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CommandComponent,
+    HomeComponent,
+    LayoutComponent,
+    LayoutHeaderComponent,
+    LayoutFooterComponent
   ],
   imports: [
     BrowserModule

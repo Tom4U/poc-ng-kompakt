@@ -1,0 +1,13 @@
+.action {
+    cursor: pointer;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--accent-contrast-color);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+
+    &:hover {
+        background-color: var(--accent-color);
+    }
+}
