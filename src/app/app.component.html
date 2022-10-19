@@ -11,14 +11,14 @@
         <div class="greeter">
             <div class="prompt">
                 <div class="form-group">
-                    <input class="input" type="text" name="name" id="name" placeholder="Dein Name" required>
+                    <input [(ngModel)]="name" class="input" type="text" name="name" id="name" placeholder="Dein Name" required>
                 </div>
                 <div class="actions">
                     <app-command [command]="sayHelloCommand"></app-command>
                 </div>
             </div>
             <div class="output">
-                <p id="greeting" *ngIf="!hasGreeting"></p>
+                <p id="greeting" *ngIf="hasGreeting">{{greeting}}</p>
             </div>
         </div>
     </main>

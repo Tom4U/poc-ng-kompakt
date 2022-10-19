@@ -9,9 +9,12 @@ import { Command } from "./shared/ui/command/command";
 export class AppComponent {
   title = "Begrüßung";
   showAction1 = false;
+  name = "";
+  greeting = "";
+
   sayHelloCommand = new Command(
     "Sag Hallo",
-    () => {},
+    () => this.setGreeting(this.name),
     () => true
   );
 
@@ -28,9 +31,11 @@ export class AppComponent {
     ),
   ];
 
+  private setGreeting(name: string): void {
+    this.greeting = `Hallo ${name}`;
+  }
+
   get hasGreeting(): boolean {
     return this.greeting.length > 0;
   }
-
-  private greeting = "";
 }
