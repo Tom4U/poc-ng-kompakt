@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Login } from './login';
 
 @Component({
@@ -7,9 +7,11 @@ import { Login } from './login';
   styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent {
+  @Output() close = new EventEmitter<Login>();
+
   login = new Login();
 
   doLogin(): void {
-    console.log('Wird angemeldet ...');
+    this.close.emit(this.login);
   }
 }

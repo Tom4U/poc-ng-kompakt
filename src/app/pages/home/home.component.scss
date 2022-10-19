@@ -1,3 +1,14 @@
 .full-width {
     width: 100%;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    .error {
+        color: rgb(195, 8, 8);
+        text-align: center;
+        font-weight: bold;
+    }
+}

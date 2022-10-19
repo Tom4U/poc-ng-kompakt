@@ -9,7 +9,7 @@
             <input [(ngModel)]="login.password" required type="password" name="password" id="password">
         </div>
         <div class="actions">
-            <button type="reset" class="button reset">Zurücksetzen</button>
+            <button type="reset" class="button reset" (click)="close.emit()">Abbrechen</button>
             <button (click)="doLogin()" type="submit" class="button submit">Anmelden</button>
         </div>
     </form>
