@@ -8,19 +8,7 @@
         </div>
     </header>
     <main class="content container-padding">
-        <div class="greeter">
-            <div class="prompt">
-                <div class="form-group">
-                    <input [(ngModel)]="name" class="input" type="text" name="name" id="name" placeholder="Dein Name" required>
-                </div>
-                <div class="actions">
-                    <app-command [command]="sayHelloCommand"></app-command>
-                </div>
-            </div>
-            <div class="output">
-                <p id="greeting" *ngIf="hasGreeting">{{greeting}}</p>
-            </div>
-        </div>
+        <app-greeter class="greeter"></app-greeter>
     </main>
     <footer class="footer container-padding">
         <p>&copy; 2022 by me :)</p>
