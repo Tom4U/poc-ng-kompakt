@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { NameService } from "./services/name.service";
 import { Command } from "./shared/ui/command/command";
 
 @Component({
@@ -9,6 +10,7 @@ import { Command } from "./shared/ui/command/command";
 export class AppComponent {
   title = "Begrüßung";
   showAction1 = false;
+  nameFromForm = ''
   
   headerActions: Command[] = [
     new Command(
@@ -22,4 +24,8 @@ export class AppComponent {
       () => true
     ),
   ];
+
+  constructor(nameSvc: NameService) {
+    nameSvc.nameChange.subscribe(name => this.nameFromForm = name);
+  }
 }
