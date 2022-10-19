@@ -1,12 +1,16 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class NameService {
   nameChange = new EventEmitter<string>();
 
+  private name: string;
+
+  constructor(initialName: string) {
+    this.name = initialName;
+  }
+
   setName(name: string): void {
-    this.nameChange.emit(name);
+    this.name = name;
+    this.nameChange.emit(this.name);
   }
 }
