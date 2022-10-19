@@ -1,0 +1,4 @@
+<app-layout class="full-width" title="Mein Verein" [commands]="commands" [copyright]="copyright">
+    <p *ngIf="!showLogin">Willkommen!</p>
+    <app-login *ngIf="showLogin" class="full-width"></app-login>
+</app-layout>
