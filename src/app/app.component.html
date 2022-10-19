@@ -3,9 +3,7 @@
         <h1 class="title">{{title}}</h1>
         <div class="header-actions">
             <ng-container *ngFor="let headerAction of headerActions" >
-                <button 
-                *ngIf="headerAction.showAction()" class="header-action"
-                type="button">{{headerAction.name}}</button>
+                <app-command [command]="headerAction"></app-command>
             </ng-container>
         </div>
     </header>
@@ -16,7 +14,7 @@
                     <input class="input" type="text" name="name" id="name" placeholder="Dein Name" required>
                 </div>
                 <div class="actions">
-                    <button id="greet-action" class="action">Sag Hallo</button>
+                    <app-command [command]="sayHelloCommand"></app-command>
                 </div>
             </div>
             <div class="output">

@@ -23,15 +23,6 @@
             font-size: 2rem;
             font-weight: normal;
         }
-
-        .header-actions {
-            .header-action {
-                font-size: 1.4rem;
-                line-height: 1.8rem;
-                cursor: pointer;
-                margin-right: 10px;
-            }
-        }
     }
     
     .content {
@@ -46,20 +37,6 @@
         
         .actions {
             margin-top: 25px;
-
-            .action {
-                cursor: pointer;
-                background: var(--primary-color);
-                color: var(--highlight-color);
-                border: none;
-                font-size: 1.6rem;
-                line-height: 2rem;
-                border-radius: 4px;
-
-                &:hover {
-                    background-color: rgba(128, 0, 0, 0.7);
-                }
-            }
         }
     }
     

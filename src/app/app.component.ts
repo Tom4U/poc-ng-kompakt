@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { HeaderAction } from "./header-action";
+import { Command } from "./shared/ui/command/command";
 
 @Component({
   selector: "app-root",
@@ -9,14 +9,19 @@ import { HeaderAction } from "./header-action";
 export class AppComponent {
   title = "Begrüßung";
   showAction1 = false;
+  sayHelloCommand = new Command(
+    "Sag Hallo",
+    () => {},
+    () => true
+  );
 
-  headerActions: HeaderAction[] = [
-    new HeaderAction(
+  headerActions: Command[] = [
+    new Command(
       "Aktion 1",
       () => console.log("Aktion 1 geklickt"),
       () => this.showAction1
     ),
-    new HeaderAction(
+    new Command(
       "Aktion 2",
       () => console.log("Aktion 2 geklickt"),
       () => true
