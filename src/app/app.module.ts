@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { CommandComponent } from './shared/ui/command/command.component';
 import { GreeterComponent } from './pages/greeter/greeter.component';
 import { GreeterFormComponent } from './pages/greeter/greeter-form/greeter-form.component';
-import { NameService } from './services/name.service';
 
 @NgModule({
   declarations: [
@@ -19,12 +18,7 @@ import { NameService } from './services/name.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [
-    {
-      provide: NameService,
-      useValue: new NameService('nameFromAppModule')
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
