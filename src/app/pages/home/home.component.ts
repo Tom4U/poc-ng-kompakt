@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { AuthService } from "src/app/services/auth.service";
 import { Command } from "src/app/shared/ui/command/command";
 import { Login } from "src/app/shared/ui/login/login";
 
@@ -13,45 +14,27 @@ export class HomeComponent {
   copyright = `${this.year} by Das Angular Training Team ;)`;
   authenticated = false;
   showLogin = false;
-  showError = false;
 
   commands: Command[] = [
     new Command(
       "Anmelden",
-      () => this.doLogin(),
+      () => this.showLogin = true,
       () => !this.authenticated
     ),
     new Command(
       "Abmelden",
-      () => this.doLogout(),
+      () => this.auth.logout(),
       () => this.authenticated
     ),
   ];
 
-  doLogin(): void {
-    this.showLogin = true;
+  constructor(private auth: AuthService) {
+    auth.authenticated.subscribe(authenticated => {
+      this.authenticated = authenticated;
+    });
   }
 
-  doLogout(): void {
-    this.authenticated = false;
-  }
-
-  validateLogin(login: Login): void {
-    if (!login) {
-      this.showLogin = false;
-      return;
-    }
-
-    const user = 'user';
-    const pass = '1234';
-    const isValid = login.username === user && login.password === pass;
-    this.authenticated = isValid;
-    
-    if (isValid) {
-      this.showLogin = false;
-      this.showError = false;
-    } else {
-      this.showError = true;
-    }
+  closeLogin(): void {
+    this.showLogin = false;
   }
 }

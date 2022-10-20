@@ -1,7 +1,6 @@
 <app-layout class="full-width" title="Mein Verein" [commands]="commands" [copyright]="copyright">
     <div class="container full-width">
         <p *ngIf="!showLogin">Willkommen!</p>
-        <p *ngIf="showError" class="error full-width">Bitte Anmeldedaten überprüfen</p>
-        <app-login *ngIf="showLogin" class="full-width" (close)="validateLogin($event)"></app-login>
+        <app-login *ngIf="showLogin" class="full-width" (close)="closeLogin()"></app-login>
     </div>
 </app-layout>
