@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { HeaderService } from 'src/app/services/header.service';
 
 @Component({
   selector: "app-greeter",
@@ -12,9 +12,8 @@ export class GreeterComponent {
     return this.greeting.length > 0;
   }
 
-  constructor(title: Title) {
-    const oldTitle = title.getTitle();
-    title.setTitle(`${oldTitle} | Greeter`);
+  constructor(headerSvc: HeaderService) {
+    headerSvc.changeHeader('Greeter');
   }
 
   setGreeting(name: string): void {

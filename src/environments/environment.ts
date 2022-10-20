@@ -6,7 +6,8 @@ import { EnvironmentRef } from "./environment-template";
 
 export const environment: EnvironmentRef = {
   production: false,
-  testValue: ''
+  appName: 'Angular Demo',
+  apiUrl: 'http://localhost:3000'
 };
 
 /*

@@ -1,4 +1,5 @@
 export interface EnvironmentRef {
     production: boolean;
-    testValue: string;
+    appName: string;
+    apiUrl: string;
 }

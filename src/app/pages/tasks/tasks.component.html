@@ -1,0 +1,7 @@
+<div class="container">
+    <nav>
+        <button type="button" class="button add" title="Aufgabe hinzufügen" (click)="addTask()">&plus;</button>
+    </nav>
+    <app-task-list *ngIf="!showForm"></app-task-list>
+    <app-task-form *ngIf="showForm" (formClose)="hideForm()"></app-task-form>
+</div>

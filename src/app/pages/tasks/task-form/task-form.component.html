@@ -1,0 +1,10 @@
+<div class="form-container">
+    <div class="form-group">
+        <label for="title">Aufgabentitel</label>
+        <input type="text" id="title" [(ngModel)]="task.title">
+    </div>
+    <div class="actions">
+        <button type="reset" (click)="close()">Abbrechen</button>
+        <button type="submit" (click)="save()">Speichern</button>
+    </div>
+</div>

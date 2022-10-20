@@ -1,0 +1,15 @@
+.container {
+    .button {
+        width: 64px;
+        height: 64px;
+        border: none;
+        border-radius: 64px;
+        cursor: pointer;
+        font-size: 32px;
+
+        &.add {
+            background: var(--primary-color);
+            color: var(--highlight-color);
+        }
+    }
+}
