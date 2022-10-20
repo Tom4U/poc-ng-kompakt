@@ -11,8 +11,8 @@ import { Command } from "./shared/ui/command/command";
 })
 export class AppComponent {
   title = environment.appName;
-  greeterActive = true;
-  tasksActive = false;
+  greeterActive = false;
+  tasksActive = true;
 
   constructor(headerSvc: HeaderService, changeDetector: ChangeDetectorRef) {
     headerSvc.headingChange.subscribe(heading => {

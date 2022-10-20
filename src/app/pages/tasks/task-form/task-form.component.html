@@ -1,10 +1,13 @@
-<div class="form-container">
-    <div class="form-group">
-        <label for="title">Aufgabentitel</label>
-        <input type="text" id="title" [(ngModel)]="task.title">
-    </div>
-    <div class="actions">
-        <button type="reset" (click)="close()">Abbrechen</button>
-        <button type="submit" (click)="save()">Speichern</button>
-    </div>
+<div>
+    <form class="form-container" (ngSubmit)="save(myForm)" #myForm="ngForm">
+        <div class="form-group">
+            <label for="title">Aufgabentitel</label>
+            <input type="text" #title="ngModel" class="form-field validate" name="title" id="title" required [(ngModel)]="task.title">
+            <div class="error" [hidden]="title.valid || title.pristine">Der Titel ist erforderlich</div>
+        </div>
+        <div class="actions">
+            <button type="reset" (click)="close()">Abbrechen</button>
+            <button type="submit" [disabled]="myForm.dirty && myForm.invalid">Speichern</button>
+        </div>
+    </form>
 </div>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { TasksService } from '../services/tasks.service';
 import { Task } from '../task';
 
@@ -18,9 +19,10 @@ export class TaskFormComponent {
     this.formClose.emit();
   }
 
-  save(): void {
-    if (this.task.title.length > 0) this.tasksSvc.addTask(this.task);
-
-    this.close();
+  save(form: NgForm): void {
+    if (form.valid) {
+      this.tasksSvc.addTask(this.task);
+      this.close();
+    }
   }
 }
