@@ -1,5 +1,5 @@
 <div class="prompt">
-    <app-greeter-form></app-greeter-form>
+    <app-greeter-form (nameChange)="setGreeting($event)"></app-greeter-form>
 </div>
 <div class="output">
     <p id="greeting" *ngIf="hasGreeting">{{greeting}}</p>
