@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { NameService } from 'src/app/services/name.service';
+import { Component, EventEmitter } from '@angular/core';
 import { Command } from 'src/app/shared/ui/command/command';
 
 @Component({
@@ -9,12 +8,15 @@ import { Command } from 'src/app/shared/ui/command/command';
 })
 export class GreeterFormComponent {
   name = "";
+  nameChange = new EventEmitter<string>();
 
   sayHelloCommand = new Command(
     "Sag Hallo",
-    () => this.nameSvc.setName(this.name),
+    () => {
+      console.log('emitting');
+      console.log(this.nameChange);
+      this.nameChange.emit(this.name);
+    },
     () => true
   );
-
-  constructor(private nameSvc: NameService) {}
 }
