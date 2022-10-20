@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Login } from './login';
 
@@ -20,9 +21,9 @@ export class LoginComponent {
     })
   }
 
-  doLogin(): void {
+  doLogin(form: NgForm): void {
     const {username, password} = this.login;
 
-    this.auth.login(username, password);
+    if (form.dirty && form.valid) this.auth.login(username, password);
   }
 }

@@ -1,3 +1,7 @@
+@mixin validationBorder($color) {
+    border-left: 6px solid $color;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -15,33 +19,61 @@
         flex-direction: column;
         width: 100%;
         max-width: 500px;
+        font-size: 1.3rem;
 
         .form-group {
-                display: flex;
-                flex-direction: column;
-                margin: 14px 0;
+            display: flex;
+            flex-direction: column;
+            margin: 14px 0;
+
+            .form-field {
+                border: 1px solid #666;
+                border-radius: 3px;
+                font-size: 1.3rem;
+
+                &:focus-visible {
+                    outline: none;
+                }
+
+                &.validate.ng-dirty.ng-invalid {
+                    @include validationBorder(red);
+                }
+
+                &.validate.ng-dirty.ng-valid {
+                    @include validationBorder(rgb(133, 204, 28));
+                }
             }
+
+            .error {
+                text-align: left;
+            }
+        }
         
-            .actions {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 14px;
-        
-                .button {
-                    border: 0;
-                    border-radius: 5px;
-                    font-size: 1.4rem;
-                    line-height: 1.8rem;
-                    cursor: pointer;
-        
-                    &.reset {
-                        background: lightcoral;
-                    }
-        
-                    &.submit {
-                        background: var(--accent-color);
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 14px;
+    
+            .button {
+                border: 0;
+                border-radius: 5px;
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+                cursor: pointer;
+    
+                &.reset {
+                    background: lightcoral;
+                }
+    
+                &.submit {
+                    background: var(--accent-color);
+
+                    &[disabled] {
+                        background: #aaa;
+                        cursor: default;
                     }
                 }
             }
+        }
     }
 }
