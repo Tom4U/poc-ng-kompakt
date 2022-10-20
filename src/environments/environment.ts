@@ -5,7 +5,8 @@
 import { EnvironmentRef } from "./environment-ref";
 
 export const environment: EnvironmentRef = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:3000'
 };
 
 /*
