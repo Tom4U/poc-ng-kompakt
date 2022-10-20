@@ -10,6 +10,8 @@ import { LayoutHeaderComponent } from './layout/layout-header/layout-header.comp
 import { LayoutFooterComponent } from './layout/layout-footer/layout-footer.component';
 import { LoginComponent } from './shared/ui/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
+import { ApiAuthService } from './services/api-auth.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,12 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthService,
+      useExisting: ApiAuthService
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
