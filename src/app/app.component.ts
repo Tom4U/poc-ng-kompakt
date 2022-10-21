@@ -13,9 +13,10 @@ export class AppComponent {
   title = environment.appName;
   greeterActive = false;
   tasksActive = true;
+  currentDate = new Date();
 
   constructor(headerSvc: HeaderService, changeDetector: ChangeDetectorRef) {
-    headerSvc.headingChange.subscribe(heading => {
+    headerSvc.headingChange.subscribe((heading: string) => {
       this.title = heading;
       changeDetector.detectChanges();
     });

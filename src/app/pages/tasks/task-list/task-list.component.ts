@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { TasksService } from '../services/tasks.service';
 import { Task } from '../task';
 
@@ -9,14 +10,16 @@ import { Task } from '../task';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskListComponent {
-  tasks: Task[] = [];
+  tasks: Observable<Task[]>;
   
-  constructor(tasksSvc: TasksService, changeDetector: ChangeDetectorRef) {
-    tasksSvc.tasksChange.subscribe(tasks => {
+  constructor(private tasksSvc: TasksService, changeDetector: ChangeDetectorRef) {
+    /*tasksSvc.tasksChange.subscribe(tasks => {
       this.tasks = tasks;
       changeDetector.detectChanges();
-    });
+    });*/
 
-    tasksSvc.loadTasks();
+    //tasksSvc.loadTasks();
+
+    this.tasks = tasksSvc.getTasks()
   }
 }

@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Task } from '../task';
 
 @Injectable({
@@ -18,6 +19,10 @@ export class TasksService {
 
   loadTasks(): void {
     this.tasksChange.emit(this.tasksCache);
+  }
+
+  getTasks(): Observable<Task[]> {
+    return of(this.tasksCache);
   }
 
   private generateId(): number {

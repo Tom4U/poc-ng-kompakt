@@ -12,6 +12,6 @@
         <app-tasks *ngIf="tasksActive"></app-tasks>
     </main>
     <footer class="footer container-padding">
-        <p>&copy; 2022 by me :)</p>
+        <p>&copy; {{currentDate | date:'yyyy'}} by me :)</p>
     </footer>
 </div>

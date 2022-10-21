@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Task } from '../task';
 import { TasksService } from './tasks.service';
@@ -24,6 +25,10 @@ export class PersistentTasksService extends TasksService {
     .subscribe(() => {
       this.loadTasks();
     });
+   }
+
+   override getTasks(): Observable<Task[]> {
+     return this.httpClient.get<Task[]>(this.apiUrl);
    }
 
    override loadTasks(): void {
