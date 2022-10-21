@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { TasksService } from '../services/tasks.service';
 import { Task } from '../task';
+import { User } from '../user';
 
 @Component({
   selector: "app-task-form",
@@ -9,19 +10,21 @@ import { Task } from '../task';
   styleUrls: ["./task-form.component.scss"],
 })
 export class TaskFormComponent {
+  @Input() task = new Task('', new User(''));
   @Output() formClose = new EventEmitter();
+  form: FormGroup;
 
-  task = new Task('');
-
-  constructor(private tasksSvc: TasksService) {}
+  constructor(private tasksSvc: TasksService, formBuilder: FormBuilder) {
+    this.form = this.task.toFormGroup(formBuilder);
+  }
 
   close(): void {
     this.formClose.emit();
   }
 
-  save(form: NgForm): void {
-    if (form.valid) {
-      this.tasksSvc.addTask(this.task);
+  save(): void {
+    if (this.form.valid) {
+      this.tasksSvc.addTask(<Task>this.form.value);
       this.close();
     }
   }
