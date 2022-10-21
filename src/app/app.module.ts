@@ -12,6 +12,8 @@ import { LoginComponent } from './shared/ui/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { ApiAuthService } from './services/api-auth.service';
+import { FieldErrorDirective } from './shared/ui/form/directives/field-error.directive';
+import { FormSubmitDirective } from './shared/ui/form/directives/form-submit.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ApiAuthService } from './services/api-auth.service';
     LayoutComponent,
     LayoutHeaderComponent,
     LayoutFooterComponent,
-    LoginComponent
+    LoginComponent,
+    FieldErrorDirective,
+    FormSubmitDirective
   ],
   imports: [
     BrowserModule,
