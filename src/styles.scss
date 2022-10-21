@@ -1,7 +1,7 @@
 :root {
     --default-padding: 20px;
-    --primary-color: maroon;
-    --highlight-color: lime;
+    --primary-color: hsl(0, 100%, 25%);
+    --highlight-color: hsl(120, 100%, 50%);
 }
 
 html, body {
@@ -21,4 +21,29 @@ body {
 .default-text {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
+}
+
+@mixin button($hue) {
+    cursor: pointer;
+        border: none;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        border-radius: 4px;
+        margin: 0 10px;
+    
+        &:hover {
+            background-color: hsl($hue, 100%, 30%);
+        }
+}
+
+.default-button {
+    @include button(0);
+    background: var(--primary-color);
+    color: var(--highlight-color);
+}
+
+.warn-button {
+    @include button(0);
+    background: indianred;
+    color: black;
 }
