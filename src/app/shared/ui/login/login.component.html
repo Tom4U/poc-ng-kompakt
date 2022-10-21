@@ -1,19 +1,25 @@
 <div class="container">
     <p *ngIf="hasError" class="error">Bitte Anmeldedaten überprüfen</p>
-    <form class="form" #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)">
+    <form class="form" [formGroup]="form" (ngSubmit)="doLogin()">
         <div class="form-group">
             <label for="username">Benutzername</label>
-            <input class="form-field validate" #username="ngModel" [(ngModel)]="login.username" required type="text" name="username" id="username">
-            <div class="error" [hidden]="username.pristine || username.valid">Der Benutzername ist erforderlich.</div>
+            <input class="form-field validate" formControlName="username" type="text" id="username">
+            <div class="error" 
+                 [hidden]="form.controls['username'].pristine || form.controls['username'].valid">
+                Der Benutzername ist erforderlich.
+            </div>
         </div>
         <div class="form-group">
             <label for="password">Passwort</label>
-            <input class="form-field validate" #password="ngModel" [(ngModel)]="login.password" required type="password" name="password" id="password">
-            <div class="error" [hidden]="password.pristine || password.valid">Das Passwort ist erforderlich.</div>
+            <input class="form-field validate" formControlName="password" type="password" id="password">
+            <div class="error" 
+                [hidden]="form.controls['password'].pristine || form.controls['password'].valid">
+                Das Passwort ist erforderlich.
+            </div>
         </div>
         <div class="actions">
             <button type="reset" class="button reset" (click)="close.emit()">Abbrechen</button>
-            <button type="submit" class="button submit" [disabled]="loginForm.dirty && loginForm.invalid">Anmelden</button>
+            <button type="submit" class="button submit" [disabled]="form.dirty && form.invalid">Anmelden</button>
         </div>
     </form>
 </div>

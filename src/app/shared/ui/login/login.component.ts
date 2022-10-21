@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Login } from './login';
 
@@ -12,18 +12,23 @@ export class LoginComponent {
   @Output() close = new EventEmitter();
 
   login = new Login();
+  form: FormGroup;
   hasError = false;
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, formBuilder: FormBuilder) {
     auth.authenticationError.subscribe(hasError => this.hasError = hasError);
     auth.authenticated.subscribe(authenticated => {
       if (authenticated) this.close.emit();
-    })
+    });
+
+    this.form = this.login.toForm(formBuilder);
   }
 
-  doLogin(form: NgForm): void {
-    const {username, password} = this.login;
+  doLogin(): void {
+    const {username, password} = this.form.value;
 
-    if (form.dirty && form.valid) this.auth.login(username, password);
+    if (this.form.dirty && this.form.valid) {
+      this.auth.login(username, password);
+    }
   }
 }
