@@ -14,6 +14,8 @@ import { AuthService } from './services/auth.service';
 import { ApiAuthService } from './services/api-auth.service';
 import { FieldErrorDirective } from './shared/ui/form/directives/field-error.directive';
 import { FormSubmitDirective } from './shared/ui/form/directives/form-submit.directive';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { RoutingModule } from './routing/routing.module';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,15 @@ import { FormSubmitDirective } from './shared/ui/form/directives/form-submit.dir
     LayoutFooterComponent,
     LoginComponent,
     FieldErrorDirective,
-    FormSubmitDirective
+    FormSubmitDirective,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RoutingModule
   ],
   providers: [
     {

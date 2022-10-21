@@ -3,7 +3,7 @@ import { DateHelper } from "src/shared/code-helpers/date-helper";
 
 @Component({
   selector: "app-root",
-  template: `<app-home></app-home>`,
+  template: `<router-outlet></router-outlet>`,
 })
 export class AppComponent {
   constructor() {

@@ -1,40 +1,37 @@
-import { Component } from "@angular/core";
+import { AfterViewChecked, AfterViewInit, Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { AuthService } from "src/app/services/auth.service";
 import { Command } from "src/app/shared/ui/command/command";
-import { Login } from "src/app/shared/ui/login/login";
 
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewChecked {
   private year = new Date().getFullYear();
 
   copyright = `${this.year} by Das Angular Training Team ;)`;
   authenticated = false;
-  showLogin = false;
 
   commands: Command[] = [
     new Command(
       "Anmelden",
-      () => this.showLogin = true,
+      () => this.router.navigate(['anmeldung']),
       () => !this.authenticated
     ),
     new Command(
       "Abmelden",
-      () => this.auth.logout(),
+      () => this.router.navigate(['']),
       () => this.authenticated
     ),
   ];
 
-  constructor(private auth: AuthService) {
-    auth.authenticated.subscribe(authenticated => {
+  constructor(private auth: AuthService, private router: Router) {}
+
+  ngAfterViewChecked(): void {
+    this.auth.authenticated.subscribe((authenticated) => {
       this.authenticated = authenticated;
     });
-  }
-
-  closeLogin(): void {
-    this.showLogin = false;
   }
 }
