@@ -1,3 +1,1 @@
-<button appButton="warn" class="command" type="button" (click)="command?.command()">
-    {{ command?.name }}
-</button>
+<a [routerLink]="command?.path" routerLinkActive="active" [title]="command?.name" class="command">{{command?.name}}</a>

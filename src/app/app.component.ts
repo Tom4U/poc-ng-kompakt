@@ -25,12 +25,12 @@ export class AppComponent {
   headerActions: Command[] = [
     new Command(
       "Greeter",
-      () => this.showGreeter(),
+      'greeter',
       () => true
     ),
     new Command(
       "Aufgaben",
-      () => this.showTasks(),
+      'tasks',
       () => true
     ),
   ];

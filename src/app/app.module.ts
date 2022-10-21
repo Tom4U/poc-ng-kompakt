@@ -14,6 +14,9 @@ import { TaskListItemComponent } from './pages/tasks/task-list/task-list-item/ta
 import { TasksService } from './pages/tasks/services/tasks.service';
 import { PersistentTasksService } from './pages/tasks/services/persistent-tasks.service';
 import { ButtonDirective } from './directives/button.directive';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { RoutingModule } from './routing/routing.module';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +28,16 @@ import { ButtonDirective } from './directives/button.directive';
     TaskListComponent,
     TaskFormComponent,
     TaskListItemComponent,
-    ButtonDirective
+    ButtonDirective,
+    HomepageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RoutingModule
   ],
   providers: [
     {

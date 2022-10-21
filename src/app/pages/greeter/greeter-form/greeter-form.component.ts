@@ -12,7 +12,7 @@ export class GreeterFormComponent {
 
   sayHelloCommand = new Command(
     "Sag Hallo",
-    () => this.nameChange.emit(this.name),
+    '',
     () => true
   );
 }

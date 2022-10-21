@@ -1,7 +1,7 @@
 export class Command {
   constructor(
     public name: string,
-    public command: Function,
+    public path: string,
     public show: Function
   ) {}
 }
