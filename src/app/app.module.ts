@@ -9,7 +9,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { LayoutHeaderComponent } from './layout/layout-header/layout-header.component';
 import { LayoutFooterComponent } from './layout/layout-footer/layout-footer.component';
 import { LoginComponent } from './shared/ui/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { ApiAuthService } from './services/api-auth.service';
 
@@ -26,6 +26,7 @@ import { ApiAuthService } from './services/api-auth.service';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [
